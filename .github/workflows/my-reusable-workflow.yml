@@ -12,3 +12,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "The input is ${{ inputs.my_input }}"
+      - id: my_step
+        run: echo "::set-output name=my_step_output::some value"
