@@ -8,4 +8,11 @@ jobs:
     with:
       my_input: "Hello, World!"
 
-      
+      # ... (other configuration)
+
+  use-output:
+    needs: call-workflow
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The output was ${{ needs.call-workflow.outputs.my_output }}"
+
